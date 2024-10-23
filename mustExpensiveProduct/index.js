@@ -8,16 +8,24 @@
 // Utilise la méthode reduce() pour parcourir le tableau et déterminer le produit le plus cher.
 // Affiche le nom et le prix du produit le plus cher.
 
-
 const products = [
-    { name: 'Produit A', price: 100 },
-    { name: 'Produit B', price: 300 },
-    { name: 'Produit C', price: 200 },
-    { name: 'Produit D', price: 400 }
-  ];
-  
-// Trouver le produit le plus cher avec reduce  
-console.log(`Le produit le plus cher est : ${mostExpensiveProduct.name} au prix de ${mostExpensiveProduct.price} €`);
-  
+  { name: "Produit A", price: 100 },
+  { name: "Produit B", price: 300 },
+  { name: "Produit C", price: 200 },
+  { name: "Produit D", price: 400 },
+];
+
+// Trouver le produit le plus cher avec reduce
+const mostExpensiveProduct = (products.reduce =
+  ((acc, product) => {
+    return product.price > acc.price ? product : acc;
+  },
+  products[0]));
+
 // Résultat attendu :
+console.log(
+  `Le produit le plus cher est : ${mostExpensiveProduct.name} au prix de ${mostExpensiveProduct.price} €`
+);
+//);
+
 // Le produit le plus cher est : Produit D au prix de 400 €
